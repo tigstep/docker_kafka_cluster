@@ -1,3 +1,4 @@
+CREDITS: This is the upgraded version of gten/docker-kafka-cluster (kafka version is changed from 0.9 to 2.1.0 and the start-kafka.sh is changed to work with kafka2.1.0 specific server.properties)
 # docker-kafka-cluster
 A very simple setup for running a kafka cluster using docker images. It requires a zookeeper cluster and I have provided the same in another repo.
 
@@ -9,7 +10,7 @@ There are lots of kafka docker images that help you to run a standalone version 
 
 # Docker image
 ```
-docker pull jeygeethan/kafka-cluster
+docker pull tigstep/docker-kafka-cluster
 ```
 
 # Setting up a kafka cluster
