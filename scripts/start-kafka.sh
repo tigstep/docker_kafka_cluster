@@ -2,7 +2,7 @@
 
 if [ ! -z "$KAFKA_HOST" ]; then
     echo "advertised host: $KAFKA_HOST"
-    sed -r -i "s/#(advertised.host.name)=(.*)/\1=$KAFKA_HOST/g" $KAFKA_HOME/config/server.properties
+    sed -r -i "s/#(advertised.listeners)=(.*)/\1=PLAINTEXT:\/\/$KAFKA_HOST/g" $KAFKA_HOME/config/server.properties
 fi
 if [ ! -z "$KAFKA_PORT" ]; then
     echo "advertised port: $KAFKA_PORT"
