@@ -1,3 +1,5 @@
+# CREDITS
+This is the upgraded version of gten/docker-kafka-cluster (kafka version is changed from 0.9 to 2.1.0 and the start-kafka.sh is changed to work with kafka2.1.0 specific server.properties)
 # docker-kafka-cluster
 A very simple setup for running a kafka cluster using docker images. It requires a zookeeper cluster and I have provided the same in another repo.
 
@@ -23,14 +25,14 @@ For each of the nodes, try running the following command to run a broker. The fo
 Run these scripts on individual hosts to create a cluster
 ### Node1
 ```
-docker run -p 9092:9092 -e KAFKA_HOST=host_kafka1 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=0 --name kafka1 jeygeethan/kafka-cluster
+docker run -p 9092:9092 -e KAFKA_HOST=host_kafka1 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=0 --name kafka1 tigstep/docker-kafka-cluster
 ```
 ### Node2
 ```
-docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=1 --name kafka1 jeygeethan/kafka-cluster
+docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=1 --name kafka1 tigstep/docker-kafka-cluster
 ```
 
 ### Node3
 ```
-docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=1 --name kafka1 jeygeethan/kafka-cluster
+docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=1 --name kafka1 tigstep/docker-kafka-cluster
 ```
